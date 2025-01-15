@@ -6,12 +6,15 @@ import Link from 'next/link'
 import React from 'react'
 
 const PostCard = ({ post }) => {
-  const { title, slug, excerpt, coverImage, author, date } = post
-  console.log({ title, slug, excerpt, coverImage, author, date })
+  const { title, slug, excerpt, coverImage, author, published } = post
 
   return (
-    <li className='rounded-md overflow-hidden shadow-md'>
-      <Link href={`/posts/${slug}`} aria-label={title}>
+    <li className='rounded-md overflow-hidden shadow-md flex flex-col'>
+      <Link
+        href={`/posts/${slug}`}
+        aria-label={title}
+        className='flex-1 flex flex-col'
+      >
         <div className='mb-2'>
           <ContentfulImage
             alt={`Cover Image for ${title}`}
@@ -20,13 +23,13 @@ const PostCard = ({ post }) => {
             height={coverImage.fields.file.details.image.height}
           />
         </div>
-        <div className='p-4'>
+        <div className='p-4 flex flex-1 flex-col'>
           <h3 className='text-xl mb-1 leading-snug'>{title}</h3>
           <div className='text-sm mb-4 text-gray-400'>
-            {/* <DateComponent dateString={date} /> */}
+            <DateComponent dateString={published} />
           </div>
-          <p className='text-base mb-4'>{excerpt}</p>
-          {/* <Avatar name={author.fields.name} picture={author.fields.picture} /> */}
+          <p className='text-base mb-4 flex-1'>{excerpt}</p>
+          <Avatar name={author.fields.name} picture={author.fields.picture} />
         </div>
       </Link>
     </li>

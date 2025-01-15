@@ -8,6 +8,7 @@ const nextConfig: NextConfig = {
         hostname: "images.ctfassets.net",
       },
     ],
+    loader: "custom",
   },
 };
 

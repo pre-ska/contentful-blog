@@ -1,6 +1,9 @@
-import { client } from '@/lib/contentful/client'
-import PostCard from './PostCard'
 import resolveResponse from 'contentful-resolve-response'
+
+import { client } from '@/lib/contentful/client'
+import PostCard from '@/components/posts/PostCard'
+
+export const dynamic = 'force-static'
 
 const Posts = async () => {
   const response = await client.getEntries({ content_type: 'post' })

@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 
 const contentfulLoader = ({ src, width, quality }) => {
@@ -5,7 +7,9 @@ const contentfulLoader = ({ src, width, quality }) => {
 }
 
 const ContentfulImage = props => {
-  return <Image {...props} src={`https:${props.src}`} />
+  return (
+    <Image {...props} src={`https:${props.src}`} loader={contentfulLoader} />
+  )
 }
 
 export default ContentfulImage
