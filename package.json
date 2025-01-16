@@ -12,6 +12,7 @@
     "@contentful/rich-text-react-renderer": "^16.0.1",
     "@headlessui/react": "^2.2.0",
     "@heroicons/react": "^2.2.0",
+    "contentful": "^11.4.3",
     "contentful-resolve-response": "^1.9.2",
     "next": "15.1.4",
     "react": "^19.0.0",
