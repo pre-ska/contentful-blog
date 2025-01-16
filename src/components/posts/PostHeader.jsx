@@ -23,6 +23,7 @@ const PostHeader = ({ post }) => {
           src={coverImage.fields.file.url}
           width={coverImage.fields.file.details.image.width}
           height={coverImage.fields.file.details.image.height}
+          priority
         />
       </div>
       <div className='flex justify-between items-center md:hidden mb-6'>

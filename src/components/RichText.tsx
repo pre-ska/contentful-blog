@@ -180,6 +180,7 @@ const options = {
 }
 
 const RichText = ({ content }: { content: any }) => {
+  // @ts-expect-error - options
   return <>{documentToReactComponents(content, options)}</>
 }
 

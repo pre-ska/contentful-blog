@@ -5,6 +5,8 @@ import PostHeader from '@/components/posts/PostHeader'
 // import PreviewAlert from '@/components/ui/PreviewAlert'
 import { client, previewClient } from '@/lib/contentful/client'
 
+export const dynamic = 'force-static'
+
 const Post = async ({ params }) => {
   const { slug, preview = false } = await params
   console.log('params', { slug, preview })
@@ -30,7 +32,7 @@ const Post = async ({ params }) => {
     <section className='section'>
       {preview && <PreviewAlert />}
       <div className='container'>
-        <article className='prose mx-auto'>
+        <article className='prose mx-auto max-w-none'>
           <PostHeader post={post[0].fields} />
           <PostBody post={post[0].fields} />
         </article>
